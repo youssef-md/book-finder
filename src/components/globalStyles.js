@@ -2,13 +2,22 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    --bg-color: '#F3F8FE';
+    /* Typography */
     --h1: 4.88rem;
     --h2: 3.91rem;
     --h3: 3.13rem;
     --strong: 2.5rem;
     --p: 2rem;
     --small: 1.6rem;
+    
+    /* Colors */
+    --color-accent: #8B9DFF;
+    --bg-color: #E6F0FD;
+    --dark-100: rgba(0, 0, 0, 0.05);
+
+    /* Helpers */
+    --border-radius-900: 2.4rem;
+    --shadow-200: 0 0 8px rgba(139, 157, 255, 0.2);
   }
 
   * {
@@ -47,6 +56,8 @@ export const GlobalStyles = createGlobalStyle`
 
   button {
     cursor: pointer;
+    font-family: inherit;
     font-size: var(--p);
+    border: none;
   }
 `;
