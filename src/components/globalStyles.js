@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-accent: #8B9DFF;
     --bg-color: #E6F0FD;
     --dark-100: rgba(0, 0, 0, 0.05);
+    --dark-500: rgba(0, 0, 0, 0.6);
 
     /* Helpers */
     --border-radius-900: 2.4rem;
@@ -50,7 +51,7 @@ export const GlobalStyles = createGlobalStyle`
   p { font-size: var(--p); }
   small { font-size:  var(--small); }
 
-  h1, h2, h3, button, strong {
+  h1, h2, h3, button, strong, a {
     font-weight: bold;
   }
 
@@ -59,5 +60,10 @@ export const GlobalStyles = createGlobalStyle`
     font-family: inherit;
     font-size: var(--p);
     border: none;
+  }
+
+  a {
+    font-size: var(--small);
+    color: inherit;
   }
 `;

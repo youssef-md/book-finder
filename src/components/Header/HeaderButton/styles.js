@@ -11,6 +11,11 @@ export const Container = styled.button`
 
   &:hover {
     border: 2px solid var(--color-accent);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 
   svg {
