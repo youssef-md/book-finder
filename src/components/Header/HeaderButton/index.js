@@ -14,8 +14,8 @@ export default function HeaderButton({ icon, route }) {
   const isRouteSelected = useCallback(() => history.location.pathname == route);
 
   return (
-    <Container onClick={handleClick}>
-      <Icon color={isRouteSelected() ? '#8B9DFF' : 'rgba(0,0,0,0.6)'} />
+    <Container onClick={handleClick} isSelected={isRouteSelected()}>
+      <Icon />
     </Container>
   );
 }

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.button`
   padding: 3.2rem 2.4rem;
   margin-left: 1.8rem;
-  border: 2px solid white;
+  border: 2px solid
+    ${({ isSelected }) => (isSelected ? 'var(--color-accent-active)' : 'white')};
   border-radius: var(--border-radius-900);
   background: #f8f9ff;
   box-shadow: var(--shadow-200);
@@ -11,14 +12,18 @@ export const Container = styled.button`
 
   &:hover {
     border: 2px solid var(--color-accent);
-    transform: scale(1.05);
+  }
+
+  &:hover > svg {
+    color: var(--color-accent-hover);
   }
 
   &:active {
-    transform: scale(0.98);
+    border: 2px solid var(--color-accent-active);
   }
 
-  svg {
-    display: flex;
+  > svg {
+    color: ${({ isSelected }) =>
+      isSelected ? 'var(--color-accent-active)' : 'black'};
   }
 `;
