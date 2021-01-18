@@ -10,11 +10,13 @@ export const Container = styled.button`
   box-shadow: var(--shadow-200);
   transition: all 0.2s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border: 2px solid var(--color-accent);
   }
 
-  &:hover > svg {
+  &:hover > svg,
+  &:focus > svg {
     color: var(--color-accent-hover);
   }
 
