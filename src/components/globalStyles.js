@@ -17,11 +17,14 @@ export const GlobalStyles = createGlobalStyle`
 
     --bg-color: #E6F0FD;
     --dark-100: rgba(0, 0, 0, 0.05);
+    --dark-200: rgba(0, 0, 0, 0.15);
     --dark-500: rgba(0, 0, 0, 0.6);
 
     /* Helpers */
     --border-radius-900: 2.4rem;
     --border-radius-500: 1.4rem;
+    --border-radius-200: 0.8rem;
+
     --shadow-200: 0 0 8px rgba(139, 157, 255, 0.2);
     --shadow-500: 0 0 8px rgba(139, 157, 255, 0.6);
   }
@@ -63,7 +66,7 @@ export const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
     font-family: inherit;
-    font-size: var(--p);
+    font-size: var(--small);
     border: none;
   }
 
