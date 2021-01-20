@@ -1,4 +1,14 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+const shimmerLoadingAnimation = keyframes`
+  from { background-position: -100rem 0; }
+  to { background-position: 100rem 0; }
+`;
+
+export const theme = {
+  shimmerize:
+    'background: var(--shimmer-gradient); background-size: var(--shimmer-size); animation: var(--shimmer-animation)',
+};
 
 export const GlobalStyles = createGlobalStyle`
   :root {
@@ -19,6 +29,10 @@ export const GlobalStyles = createGlobalStyle`
     --dark-100: rgba(0, 0, 0, 0.05);
     --dark-200: rgba(0, 0, 0, 0.15);
     --dark-500: rgba(0, 0, 0, 0.6);
+
+    --shimmer-gradient: linear-gradient(to right, #eff1f3 0%, #e2e2e2 50%, #eff1f3 100%);
+    --shimmer-size: 100rem 100%;
+    --shimmer-animation: ${shimmerLoadingAnimation} 2s infinite;
 
     /* Helpers */
     --border-radius-900: 2.4rem;
