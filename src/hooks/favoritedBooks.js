@@ -4,7 +4,6 @@ const FavoritedBooksContext = createContext();
 
 function FavoritedBooksProvider({ children }) {
   const [favoritedBooks, setFavoritedBooks] = useState([]);
-  console.log({ favoritedBooks });
 
   function addBook(newBook) {
     if (favoritedBooks.find((book) => book.id === newBook.id)) return;
