@@ -27,5 +27,8 @@ export const Container = styled.button`
   > svg {
     color: ${({ isSelected }) =>
       isSelected ? 'var(--color-accent-active)' : 'black'};
+
+    width: 3rem;
+    height: 3rem;
   }
 `;

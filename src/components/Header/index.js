@@ -6,8 +6,8 @@ export default function Header({ title }) {
     <Container>
       <h1>{title}</h1>
       <div>
-        <HeaderButton icon="Search" route="/" />
-        <HeaderButton icon="Heart" route="/favorites" />
+        <HeaderButton icon="search" route="/" />
+        <HeaderButton icon="heart" route="/favorites" />
       </div>
     </Container>
   );

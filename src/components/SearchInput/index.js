@@ -1,4 +1,4 @@
-import { Search } from 'react-feather';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { Container } from './styles';
 
 export default function SearchInput({ inputRef, onChangeHandler }) {
@@ -9,7 +9,7 @@ export default function SearchInput({ inputRef, onChangeHandler }) {
         ref={inputRef}
         onChange={onChangeHandler}
       />
-      <Search />
+      <AiOutlineSearch />
     </Container>
   );
 }

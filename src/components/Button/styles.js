@@ -15,4 +15,9 @@ export const Container = styled.button`
   &:active {
     background: var(--color-accent-active);
   }
+
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
 `;

@@ -4,20 +4,26 @@ const FavoritedBooksContext = createContext();
 
 function FavoritedBooksProvider({ children }) {
   const [favoritedBooks, setFavoritedBooks] = useState([]);
+  console.log({ favoritedBooks });
 
-  const addBook = useCallback((newBook) => {
+  function addBook(newBook) {
+    if (favoritedBooks.find((book) => book.id === newBook.id)) return;
     setFavoritedBooks((prevState) => [newBook, ...prevState]);
-  }, []);
+  }
 
-  const removeBook = useCallback((newBook) => {
+  function removeBook(newBook) {
     setFavoritedBooks((prevState) =>
-      prevState.filter((book) => book.id != newBook)
+      prevState.filter((book) => book.id !== newBook.id)
     );
-  }, []);
+  }
+
+  function checkIsFavorited(bookId) {
+    return favoritedBooks.find((book) => book.id === bookId);
+  }
 
   return (
     <FavoritedBooksContext.Provider
-      value={{ favoritedBooks, addBook, removeBook }}
+      value={{ favoritedBooks, addBook, removeBook, checkIsFavorited }}
     >
       {children}
     </FavoritedBooksContext.Provider>
