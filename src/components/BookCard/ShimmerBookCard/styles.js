@@ -14,12 +14,15 @@ export const Container = styled.div`
     width: 18rem;
     height: 25rem;
     margin-bottom: 2rem;
+    border-radius: var(--border-radius-200);
+    border: 2px solid var(--dark-200);
     ${({ theme }) => theme.shimmerize};
   }
 
   .fake-text {
     height: 2rem;
     margin-top: 1rem;
+    border-radius: var(--border-radius-200);
     ${({ theme }) => theme.shimmerize};
 
     &--l {
@@ -49,6 +52,7 @@ export const Container = styled.div`
 
   .btn {
     height: 5rem;
+    border-radius: var(--border-radius-200);
     ${({ theme }) => theme.shimmerize};
 
     &--l {

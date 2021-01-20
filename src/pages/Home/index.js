@@ -33,21 +33,9 @@ export default function Search() {
     }, 800);
   }, []);
 
-  // uses function declaration due to useCallback memoizing the BookCards
+  // uses function declaration due to useCallback memoizing BookCards
   function getSearchedBooks() {
-    return books?.map((book) => {
-      const { id, volumeInfo } = book;
-
-      return (
-        <BookCard
-          key={id}
-          thumbnail={volumeInfo.imageLinks?.thumbnail}
-          title={volumeInfo.title}
-          authors={volumeInfo.authors}
-          categories={volumeInfo.categories}
-        />
-      );
-    });
+    return books?.map((book) => <BookCard key={book.id} book={book} />);
   }
 
   const handleLoading = useCallback(() => {

@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     
     /* Colors */
     --color-accent: #889AFD;
+    --color-accent-200: rgba(139, 157, 255, 0.2);
     --color-accent-hover: #7588E9;
     --color-accent-active: #596DD7;
 

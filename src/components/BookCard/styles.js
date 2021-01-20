@@ -20,6 +20,15 @@ export const Container = styled.div`
     height: 25rem;
     border-radius: var(--border-radius-200);
     border: 2px solid var(--dark-200);
+    margin-bottom: 1.2rem;
+  }
+
+  .inline {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 1.2rem 0;
   }
 
   footer {
