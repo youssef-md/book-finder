@@ -9,9 +9,12 @@ export default function HeaderButton({ icon, route }) {
 
   const Icon = useMemo(() => Icons[icon]);
 
-  const handleClick = useCallback(() => history.push(route));
+  const handleClick = useCallback(() => history.push(route), []);
 
-  const isRouteSelected = useCallback(() => history.location.pathname == route);
+  const isRouteSelected = useCallback(
+    () => history.location.pathname == route,
+    []
+  );
 
   return (
     <Container onClick={handleClick} isSelected={isRouteSelected()}>
