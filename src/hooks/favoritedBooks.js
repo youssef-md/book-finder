@@ -1,24 +1,30 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
 const FavoritedBooksContext = createContext();
 
 function FavoritedBooksProvider({ children }) {
   const [favoritedBooks, setFavoritedBooks] = useState([]);
 
-  function addBook(newBook) {
-    if (favoritedBooks.find((book) => book.id === newBook.id)) return;
-    setFavoritedBooks((prevState) => [newBook, ...prevState]);
-  }
+  const addBook = useCallback(
+    (newBook) => {
+      if (favoritedBooks.find((book) => book.id === newBook.id)) return;
+      setFavoritedBooks((prevState) => [newBook, ...prevState]);
+    },
+    [favoritedBooks]
+  );
 
-  function removeBook(newBook) {
+  const removeBook = useCallback((newBook) => {
     setFavoritedBooks((prevState) =>
       prevState.filter((book) => book.id !== newBook.id)
     );
-  }
+  }, []);
 
-  function checkIsFavorited(bookId) {
-    return favoritedBooks.find((book) => book.id === bookId);
-  }
+  const checkIsFavorited = useCallback(
+    (bookId) => {
+      return favoritedBooks.find((book) => book.id === bookId);
+    },
+    [favoritedBooks]
+  );
 
   return (
     <FavoritedBooksContext.Provider

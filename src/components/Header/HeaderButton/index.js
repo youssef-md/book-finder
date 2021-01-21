@@ -12,13 +12,13 @@ const icons = {
 export default function HeaderButton({ icon, route }) {
   const history = useHistory();
 
-  const Icon = useMemo(() => icons[icon]);
+  const Icon = useMemo(() => icons[icon], [icon]);
 
-  const handleClick = useCallback(() => history.push(route), []);
+  const handleClick = useCallback(() => history.push(route), [history, route]);
 
   const isRouteSelected = useCallback(
     () => history.location.pathname == route,
-    []
+    [history.location.pathname, route]
   );
 
   return (

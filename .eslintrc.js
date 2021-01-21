@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'react-hooks'],
   root: true, // Make sure eslint picks up the config at the root of the directory
   parserOptions: {
     ecmaVersion: 2020, // Use the latest ecmascript standard
@@ -29,5 +29,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off', // Allow React to be global
     'react/prop-types': 'off',
     'no-unused-vars': 1,
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
   },
 };
