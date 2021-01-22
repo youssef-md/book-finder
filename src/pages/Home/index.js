@@ -34,16 +34,21 @@ export default function Search() {
     if (!totalItems) setTotalItems(res.totalItems);
   }, [currentPage, isLoading, totalItems]);
 
+  const resetPagination = useCallback(() => {
+    setCurrentPage(1);
+    setTotalItems(0);
+  }, []);
+
   const resetSearch = useCallback(() => {
     setIsLoading(false);
     setBooks([]);
-    setCurrentPage(0);
-    setTotalItems(0);
-  }, []);
+    resetPagination();
+  }, [resetPagination]);
 
   const handleBookInput = useCallback(() => {
     if (timeoutId) clearTimeout(timeoutId);
     if (!isLoading) setIsLoading(true);
+    resetPagination();
 
     const search = bookInput.current.value;
     if (!search) {
@@ -52,7 +57,7 @@ export default function Search() {
     }
 
     timeoutId = setTimeout(fetchBooksBySearch, 1000);
-  }, [fetchBooksBySearch, isLoading, resetSearch]);
+  }, [fetchBooksBySearch, isLoading, resetSearch, resetPagination]);
 
   const handleNewPage = useCallback(
     async (newPage) => {

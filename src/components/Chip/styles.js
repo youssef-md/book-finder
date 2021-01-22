@@ -7,5 +7,6 @@ export const Container = styled.span`
   margin: 0.4rem;
   border-radius: 5rem;
   color: var(--color-accent);
+  font-weight: bold;
   background-color: var(--color-accent-200);
 `;
