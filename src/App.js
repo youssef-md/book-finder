@@ -5,7 +5,7 @@ import { FavoritedBooksProvider } from './hooks/favoritedBooks';
 
 import Routes from './routes';
 
-function App() {
+export default function App() {
   return (
     <div className="width-delimiter">
       <BrowserRouter>
@@ -19,5 +19,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

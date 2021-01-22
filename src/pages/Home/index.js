@@ -13,7 +13,7 @@ let timeoutId;
 const SHIMMER_ELEMENTS_COUNT = 12;
 const MAX_RESULTS = 12;
 
-export default function Search() {
+export default function Home() {
   const bookInput = useRef('');
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
