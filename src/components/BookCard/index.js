@@ -38,7 +38,7 @@ export default function BookCard({ book }) {
 
       <footer>
         <Button onClick={() => history.push('/detail', { book })}>
-          Ver detalhes
+          See details
         </Button>
         <Button
           onClick={isFavorited ? () => removeBook(book) : () => addBook(book)}
